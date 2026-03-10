@@ -4,7 +4,6 @@ from textual.app import App, ComposeResult
 from textual.widgets import Header, Footer, ListView, ListItem, Label, Static, RichLog, Input
 from textual.containers import Vertical, Center, Middle
 from spin import SpinScreen
-import psutil
 import socket
 import subprocess
 
@@ -107,10 +106,9 @@ class SurveyScreen(Screen):
                 self.mount(options_menu)
 
                 options_menu.focus()
-                
-                
+
         elif choice == "doodlesurvey":
-            self.query_one("#status-box", Label).update(f"EXECUTING: SURVEY...")
+            self.query_one("#status-box", Label).update("EXECUTING: SURVEY...")
 
             # Trigger options menu for name
             if not self.query("#options-container"):
